@@ -8,6 +8,8 @@ class HashTable:
     def __len__(self):
         return len(self.values)
 
+    def __setitem__(self, key, value):
+        self.values.append(value)
 
 
 
