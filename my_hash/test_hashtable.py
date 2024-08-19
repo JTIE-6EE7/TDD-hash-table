@@ -32,6 +32,10 @@ def test_should_insert_key_value_pairs():
     assert 37 in hash_table.values
     assert True in hash_table.values
 
+    assert len(hash_table) == 100
+
 @pytest.mark.skip
 def test_should_not_shrink_when_removing_elements():
     pass
+
+

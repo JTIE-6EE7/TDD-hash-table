@@ -9,7 +9,8 @@ class HashTable:
         return len(self.values)
 
     def __setitem__(self, key, value):
-        self.values.append(value)
+        index = hash(key) % len(self)
+        self.values[index] = value
 
 
 
