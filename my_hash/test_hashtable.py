@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # test_hashtable.py
 
+import pytest
 from hashtable import HashTable
 
 def test_should_create_hashtable():
@@ -30,3 +31,7 @@ def test_should_insert_key_value_pairs():
     assert "hello" in hash_table.values
     assert 37 in hash_table.values
     assert True in hash_table.values
+
+@pytest.mark.skip
+def test_should_not_shrink_when_removing_elements():
+    pass
