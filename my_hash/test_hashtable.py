@@ -73,6 +73,8 @@ def test_should_not_find_key(hash_table):
 
 def test_should_get_value(hash_table):
     assert hash_table.get("hola") == "hello"
+    assert hash_table.get(98.6) == 37
+    assert hash_table.get(False) == True
 
 def test_should_get_none_when_missing_key(hash_table):
     assert hash_table.get("missing_key") is None
@@ -82,3 +84,12 @@ def test_should_get_default_value_when_missing_key(hash_table):
 
 def test_should_get_value_with_default(hash_table):
     assert hash_table.get("hola", "default") == "hello"
+
+def test_should_delete_key_value_pair(hash_table):
+    assert "hola" in hash_table
+    assert "hello" in hash_table.values
+
+    del hash_table["hola"]
+
+    assert "hola" not in hash_table
+    assert "hello" not in hash_table.values
