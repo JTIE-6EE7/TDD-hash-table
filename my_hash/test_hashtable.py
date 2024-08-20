@@ -2,7 +2,7 @@
 # test_hashtable.py
 
 import pytest
-from hashtable import HashTable
+from hashtable import HashTable, BLANK
 
 def test_should_create_hashtable():
     assert HashTable(capacity=100) is not None
@@ -12,7 +12,7 @@ def test_should_report_capacity():
 
 def test_should_create_empty_value_slots():
     # Given
-    expected_values = [None, None, None]
+    expected_values = [BLANK, BLANK, BLANK]
     hash_table = HashTable(capacity=3)
 
     # When
@@ -39,3 +39,5 @@ def test_should_not_shrink_when_removing_elements():
     pass
 
 
+def test_should_not_contain_none_value_when_created():
+    assert None not in HashTable(capacity=100).values
