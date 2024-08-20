@@ -38,6 +38,10 @@ def test_should_insert_key_value_pairs():
 def test_should_not_shrink_when_removing_elements():
     pass
 
-
 def test_should_not_contain_none_value_when_created():
     assert None not in HashTable(capacity=100).values
+
+def test_should_insert_none_value():
+    hash_table = HashTable(capacity=100)
+    hash_table["key"] = None
+    assert None in hash_table.values
