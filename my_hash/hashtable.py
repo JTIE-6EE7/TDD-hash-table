@@ -21,5 +21,11 @@ class HashTable:
             raise KeyError(key)
         return self.values[index]
 
-
+    def __contains__(self, key):
+        try:
+            self[key]
+        except KeyError:
+            return False
+        else:
+            return True
 
