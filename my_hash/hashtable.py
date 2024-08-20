@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 # hashstable.py
-
 
 class HashTable:
     def __init__(self, capacity):
