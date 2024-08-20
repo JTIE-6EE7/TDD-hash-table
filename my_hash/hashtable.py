@@ -37,4 +37,4 @@ class HashTable:
         
     def __delitem__(self, key):
         index = hash(key) % len(self)
-        del self.values[index]
+        self.values[index] = BLANK
