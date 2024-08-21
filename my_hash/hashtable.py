@@ -14,7 +14,7 @@ class HashTable:
 
     def __len__(self):
         return len(self._pairs)
-    
+
     def __delitem__(self, key):
         if key in self:
             self._pairs[self._index(key)] = None
@@ -47,6 +47,6 @@ class HashTable:
     @property
     def pairs(self):
         return [pair for pair in self._pairs if pair]
-    
+
     def _index(self, key):
         return hash(key) % len(self)
