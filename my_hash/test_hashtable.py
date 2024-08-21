@@ -41,9 +41,7 @@ def test_should_insert_key_value_pairs():
 
 
 def test_should_not_contain_none_value_when_created():
-    hash_table = HashTable(capacity=100)
-    values = [pair.value for pair in hash_table.pairs if pair]
-    assert None not in values
+    assert None not in HashTable(capacity=100).values
 
 
 def test_should_insert_none_value():
@@ -130,3 +128,10 @@ def test_should_return_copy_of_pairs(hash_table):
 
 def test_should_not_include_blank_pairs(hash_table):
     assert None not in hash_table.pairs
+
+def test_should_return_duplicate_values():
+    hash_table = HashTable(capacity=100)
+    hash_table["Alice"] = 24
+    hash_table["Bob"] = 42
+    hash_table["Joe"] = 42
+    assert [24, 42, 42] == sorted(hash_table.values)
