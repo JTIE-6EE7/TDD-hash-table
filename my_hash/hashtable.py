@@ -1,3 +1,4 @@
+ #!/usr/bin/env python3
 # hashtable.py
 
 from typing import Any, NamedTuple
@@ -64,3 +65,7 @@ class HashTable:
 
     def _index(self, key):
         return hash(key) % self.capacity
+
+
+    def __iter__(self):
+        yield from self.keys
