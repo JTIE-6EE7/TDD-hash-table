@@ -1,7 +1,7 @@
 # test_hashtable.py
 
 import pytest
-
+from pytest_unordered import unordered
 from hashtable import HashTable
 
 
@@ -135,3 +135,13 @@ def test_should_return_duplicate_values():
     hash_table["Bob"] = 42
     hash_table["Joe"] = 42
     assert [24, 42, 42] == sorted(hash_table.values)
+
+def test_should_get_values(hash_table):
+    assert unordered(hash_table.values) == ["hello", 37, True]
+
+def test_should_get_values_of_empty_hash_table():
+    assert HashTable(capacity=100).values == []
+
+def test_should_return_copy_of_values(hash_table):
+    assert hash_table.values is not hash_table.values
+
