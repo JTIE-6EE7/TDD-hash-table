@@ -16,5 +16,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip pytest_unordered
-          pip install pytest
+          pip install pytest flake8 bandit pylint
           pytest -v
+          flake8 src/
