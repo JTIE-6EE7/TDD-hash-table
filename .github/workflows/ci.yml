@@ -21,8 +21,8 @@ jobs:
         run: |
           pytest -v
           flake8 src/
-          isort src/
-          black src/ 
+          isort src/ --check
+          black src/ --check
           bandit -r src/
           #pylint src/
 
