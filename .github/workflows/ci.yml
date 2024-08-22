@@ -18,3 +18,4 @@ jobs:
           python -m pip install --upgrade pip pytest_unordered
           pip install pytest
           pytest -v
+          flake8 src/
