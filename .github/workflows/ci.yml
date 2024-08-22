@@ -19,3 +19,4 @@ jobs:
           pip install pytest flake8 bandit pylint
           pytest -v
           flake8 src/
+          bandit -r src/
