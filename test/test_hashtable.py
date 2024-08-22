@@ -3,7 +3,7 @@
 
 import pytest
 from pytest_unordered import unordered
-from hashtable import HashTable
+from src.hashtable import HashTable
 
 
 @pytest.fixture
