@@ -1,0 +1,10 @@
+name: tdd-cicd
+on:
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+
+jobs:
+  pre-merge:
+    runs-on: ubuntu-latest
