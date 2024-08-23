@@ -20,9 +20,9 @@ jobs:
       - name: Run tests and linting
         run: |
           pytest -v
-          flake8 src/
-          isort src/ --check
-          black src/ --check
-          bandit -r src/
+          flake8 src test
+          isort src test --check
+          black src test --check
+          bandit -r -s B101 src test
           #pylint src/
 
