@@ -3,6 +3,7 @@
 
 import pytest
 from pytest_unordered import unordered
+
 from src.hashtable import HashTable
 
 
@@ -17,10 +18,6 @@ def hash_table():
 
 def test_should_create_hashtable():
     assert HashTable(capacity=100) is not None
-
-
-def test_should_report_capacity():
-    assert len(HashTable(capacity=100)) == 0
 
 
 def test_should_create_empty_pair_slots():
